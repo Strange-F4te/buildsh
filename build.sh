@@ -8,17 +8,6 @@ rm -rf vendor/infinix
 echo "Cleanup completed."
 echo ""
 
-# Initialize the ROM source repository
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs
-if [ $? -ne 0 ]; then
-    echo "Repo initialization failed. Exiting."
-    exit 1
-fi
-echo "================="
-echo "Repo init success"
-echo "================="
-echo ""
-
 # Clone local manifests
 git clone https://github.com/Strange-F4te/android_device_infinix_X6882 device/infinix/X6882 --depth=1
 git clone https://github.com/Strange-F4te/kernel_infinix_X6882 device/infinix/X6882-kernel --depth=1
