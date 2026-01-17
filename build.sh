@@ -21,7 +21,7 @@ echo "================="
 
 # Clone local manifests
 git clone https://github.com/Strange-F4te/device_infinix_X6882 device/infinix/X6882 
-git clone https://github.com/Strange-F4te/kernel_infinix_X6882 device/infinix/X6882-kernel 
+git clone https://github.com/mt6789-transsion/device_infinix_X6882-kernel device/infinix/X6882-kernel 
 git clone https://github.com/Strange-F4te/vendor_infinix_X6882 vendor/infinix/X6882 
 git clone https://github.com/Strange-F4te/hardware_transsion hardware/transsion 
 git clone https://github.com/Strange-F4te/hardware_mediatek hardware/mediatek 
