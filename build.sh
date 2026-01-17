@@ -8,14 +8,26 @@ rm -rf vendor/infinix
 echo "Cleanup completed."
 echo ""
 
+# Initialize the ROM source repository
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle
+if [ $? -ne 0 ]; then
+    echo "Repo initialization failed. Exiting."
+    exit 1
+fi
+echo "================="
+echo "Repo init success"
+echo "================="
+
+
 # Clone local manifests
-git clone https://github.com/Strange-F4te/android_device_infinix_X6882 device/infinix/X6882 --depth=1
-git clone https://github.com/Strange-F4te/kernel_infinix_X6882 device/infinix/X6882-kernel --depth=1
-git clone https://github.com/Strange-F4te/vendor_infinix_X6882 vendor/infinix/X6882 --depth=1
-git clone https://github.com/Strange-F4te/hardware_transsion hardware/transsion --depth=1
-git clone https://github.com/Strange-F4te/hardware_mediatek hardware/mediatek --depth=1
-git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX packages/apps/ViPER4AndroidFX --depth=1
-git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr --depth=1
+git clone https://github.com/Strange-F4te/device_infinix_X6882 device/infinix/X6882 
+git clone https://github.com/Strange-F4te/kernel_infinix_X6882 device/infinix/X6882-kernel 
+git clone https://github.com/Strange-F4te/vendor_infinix_X6882 vendor/infinix/X6882 
+git clone https://github.com/Strange-F4te/hardware_transsion hardware/transsion 
+git clone https://github.com/Strange-F4te/hardware_mediatek hardware/mediatek 
+git clone https://github.com/techyminati/android_vendor_mediatek_ims vendor/mediatek/ims
+git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX packages/apps/ViPER4AndroidFX 
+git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr 
 if [ $? -ne 0 ]; then
     echo "Failed to clone tree source. Exiting."
     exit 1
